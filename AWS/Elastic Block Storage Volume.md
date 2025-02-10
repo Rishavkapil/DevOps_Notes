@@ -1,0 +1,2 @@
+Elastic Block Storage volume is a virtual storage provided by aws which is very similar to hard disk storage. 
+		These are the storage volume that you can attach to ec2 instances. After you attach a volume, you can use it as you simply use your local storage.
