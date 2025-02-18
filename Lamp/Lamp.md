@@ -3,9 +3,6 @@ Lamp stands for Linux , Apache , Mysql and php , which are open-source software 
  
 
 
-![[Pasted image 20250129114532.png]]
-
-
 
 #### How does Lamp Stack Work
 

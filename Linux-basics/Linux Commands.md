@@ -23,3 +23,9 @@ Displays space usage at the **directory level**. It tells you how much space ind
 
 **adduser :**  `adduser` is a more user-friendly, interactive script for creating new users. It's often available on distributions like Debian, Ubuntu, and derivatives.
 **Interactive**: `adduser` prompts you for all required information (like password, home directory, full name, etc.), making it easier to create a new user.
+
+
+
+#### To delete data inside the file but not the actual file
+	rm -rf <file_name>/* 
+

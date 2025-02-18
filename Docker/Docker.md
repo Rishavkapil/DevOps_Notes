@@ -38,4 +38,4 @@ Hypervisor is used to create multiple machines on a host operating system and it
 
 
 ###### Registry 
-it is a place where you can deploy an image Docker hub is a type registry , AWS has its own registry 
+it is a place where you can deploy an image. Docker hub is a type registry , AWS has its own registry 

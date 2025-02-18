@@ -1,4 +1,4 @@
-	NGINX is an open-source web server , reverse proxying , load balancing media streaming, HTTP  cache etc. 
+NGINX is an open-source web server , reverse proxying , load balancing media streaming, HTTP  cache etc. 
 
 ## What is reverse Proxy ?
 A reverse proxy is used to provide load balancing services .
