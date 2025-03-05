@@ -30,4 +30,14 @@ But it points to IPV6 addresses.
 
 #### CNAME record
 
-CNAME ( Canonical name) 
+CNAME ( Canonical name) - is a DNS record that points  a domain name to another domain . 
+
+A practical example for the use of CNAME record is running multiple subdomains for different purposes on the same server. 
+
+It's also possible to point a CNAME To another CNAME. 
+
+#### 4. NS record
+
+A Nameserver (NS) record specifies the authoritative DNS server for a domain. 
+
+In other words , A NS record helps point to internet applications like web browsers can find the IP address of the domain name. 
