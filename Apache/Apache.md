@@ -43,7 +43,7 @@ then we again need to create index.html file for this directory for using apache
 	then we need to add content in this index.html file
 
 then we have to change the path in ``/etc/apache2/sites-enabled/default 
-nd have to do 
+and have to do 
 
 	```<VirtualHost *:8080>
 	ServerAdmin webmaster@localhost

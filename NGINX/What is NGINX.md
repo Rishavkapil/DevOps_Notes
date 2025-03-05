@@ -1,21 +1,26 @@
 NGINX is an open-source web server , reverse proxying , load balancing media streaming, HTTP  cache etc. 
 
 ## What is reverse Proxy ?
+
 A reverse proxy is used to provide load balancing services .
 **Reverse proxy** also hides the identity of server .
 **Forward proxy**  hides the identity of client.
+
 In networking and web traffic , proxy is a device or server that acts on behalf of other devices. It sits between two entities and performs a service . 
-Same way we user proxy in classes like we ask friends to mark our attandance.
+
+	
+Same way we use proxy in classes like we ask friends to mark our attandance.
 
 Typically reverse proxy server sits in front of the web servers and forwards clients requests to those web servers.
 
 ### Difference between Load Balancer and Reverse Proxy 
+
 A **Load balancer** distributes incomming client requests to a group of servers to ensure statisfactory speed and optimized functioning . Load Balancer and mostly deployed when a site needs multiple servers because the volume request is too large 
 A **Reverse Proxy** accepts requests from client and sends it to a server.
 
-
-
-
+example of reverse proxy : 
+like www.google.com/maps 
+now here /maps decides to which server the request of client goes. So here request will go to the server of google maps.
 
 
 
@@ -31,12 +36,14 @@ NGINX is built to offer low memory usage and high concurrency. Rather than creat
 
 With nginx one master process can control multiple worker process.
 
+**You can see the visual representation of working of NGINX :** 
+**https://i.imgur.com/8G2fQgN.jpeg** 
 
-![[Pasted image 20250127112156.png]]
 
 
 
 #### Routing Pathways
+
 Routing pathways in linux manage how data packets are directed from one network to another.
 
 
@@ -85,8 +92,8 @@ if we want to host a website on nginx server , Then we first need to create that
 	for example here we have specified path which is 
 		`` /var/www/html/nginx-server
 	Lets say we want to make file new file named mainsite 
-	then first we need to make a new directory named mainsite.com or mainsite (we have to mention this in nginx config file too)
-			`` sudo mkdir mainsite.com
+	then first we need to make a new directory named mainsite.com or mainsite **(we have to mention this in nginx config file too)** 
+				`` sudo mkdir mainsite.com
 				`` sudo touch index.html
 				`` sudo vim index.html 
 		then add content in this file
