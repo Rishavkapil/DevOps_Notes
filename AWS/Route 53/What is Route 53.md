@@ -1,4 +1,4 @@
-
+	
 ![[Pasted image 20250305145126.png]]
 
 
@@ -44,3 +44,22 @@ Then we need to create a record in the Hosted Zone which would point to the publ
 But the problem with this simple routing is , whenever we are creating this A record , we are putting a static IP here.  So suppose we want to change the ec2 instance and we want to have another IP address, then this record will be useless, because the resource IP has been changed and we are using the same older IP address. 
 
 To Fix this issue , we need to create a Load Balancer.
+
+
+
+### Weighted Routing
+
+![[Pasted image 20250306103535.png]]
+
+
+
+Once that request enters into our hosted zone of our AWS ROUTE 53, then it goes to the load balancer and then the load balancer will forward that request to our ec2 instance. 
+
+
+
+![[Pasted image 20250306105651.png]]
+
+
+For weighted routing we first need to create a Load Balancer and provide it target group and we need to create Internet gateway and we also need to create subnets. 
+
+then in Hosted zone we need to create record type in that and in target we need to add the DNS name provided by the Load balancer. 
