@@ -45,7 +45,8 @@ But the problem with this simple routing is , whenever we are creating this A re
 
 To Fix this issue , we need to create a Load Balancer.
 
-
+**IN simple Routing ,** All requests are directed to a single resource (eg. single IP or domain), 
+No special rules , just straight forward mapping from domain to resource
 
 ### Weighted Routing
 
@@ -56,6 +57,9 @@ To Fix this issue , we need to create a Load Balancer.
 Once that request enters into our hosted zone of our AWS ROUTE 53, then it goes to the load balancer and then the load balancer will forward that request to our ec2 instance. 
 
 
+	
+
+
 
 ![[Pasted image 20250306105651.png]]
 
@@ -63,3 +67,40 @@ Once that request enters into our hosted zone of our AWS ROUTE 53, then it goes 
 For weighted routing we first need to create a Load Balancer and provide it target group and we need to create Internet gateway and we also need to create subnets. 
 
 then in Hosted zone we need to create record type in that and in target we need to add the DNS name provided by the Load balancer. 
+
+
+
+In Weighted Routing , we divide the traffic into multiple load balancers like in this we give percentage to each load balancer to define that how much traffic should be given to each Load Balancer. 
+
+![[Pasted image 20250306163225.png]]
+
+**In weighted routing , we need to enter the value of weight between 0-255** 
+If we want to divide the weight to both load balancers by 50% , then we need to enter the value something like 128. 
+
+
+
+
+### Geolocation based routing
+
+We will configure our load balancers for different locations , lets say Finland and Portugal . 
+
+![[Pasted image 20250306165902.png]]
+
+
+
+To create a Geolocation record , you just need to select geolocation routing and add different locations for which you want to create the records. 
+
+and to test this you need to use VPN. 
+
+
+### Failover Routing
+
+It will work when something fail on one Record side.
+
+![[Pasted image 20250306170858.png]]
+
+
+
+So lets say our first load balancer fails , then it will start serving that request from another load Balancer.
+
+
