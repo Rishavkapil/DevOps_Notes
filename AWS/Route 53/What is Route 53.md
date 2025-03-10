@@ -1,4 +1,9 @@
-	
+
+Route 53 was needed because it provides highly available and scalable DNS resolution with build-in load balancing and failover , ensuring reliability and seamless AWS integration. 
+
+
+
+
 ![[Pasted image 20250305145126.png]]
 
 
