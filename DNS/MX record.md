@@ -15,3 +15,10 @@ The 'Priority' number before the domains before these MX records indicates prefe
 
 MTA (Message Transfer agent ) software is responsible for querying record. When a user sends an email, the MTA agent sends the DNS query to the DNS resolver to identify the mail server for the email recipients. The MTA establishes the SMTP connection with those mail servers. starting with prioritized domains. 
 
+
+
+
+#### what is Backup MX record ?
+
+A Backup MX record is just a MX record for a mail server with higher priority. , 
+so that under normal circumstances mail will go to more prioritized servers.

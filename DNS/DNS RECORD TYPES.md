@@ -56,3 +56,8 @@ The MX record indicates how email messages should be routed in accordance with t
 
 The 'Priority' number before the domains before these MX records indicates preference, the lower 'priority' value is prefered . This server will always try mailhost 1 because it has lower priority value. 
 
+
+
+### TXT records
+
+Lets an admin store text nodes in the record. These records are often used for email security.
