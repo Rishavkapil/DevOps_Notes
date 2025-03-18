@@ -95,9 +95,12 @@ You can reduce the load on your primary database instance by routing queries fro
 
 In this way, you can elastically scale out beyond the capacity constraints of a single DB instance for read-heavy(heavy read operations compared to write operations) database workloads. 
 
+**Why read replicas are needed ?**
+Read Replicas in Amazon RDS are used to serve high volume read traffic in order to increase aggregate read throughput. 
+
 
 ***Read replicas are asynchronously replicated from the source database, which means they might lag behind the primary database by few milliseconds to seconds , depending on the replication latency .*** 
-
+i.e changes will not be displayed to user until the current session is closed. 
 
 
 #### Proxies 
