@@ -92,3 +92,32 @@ The master node is responsible for managing Jenkins system, storing configuratio
 
 The **Slave Nodes**  also known as agent nodes, are responsible for executing the jobs assigned to them by master . 
 
+
+
+
+#### Jenkins Master
+
+
+Your main jenkins server is the master . The Master's Job is to handle : 
+
+* Scheduling build jobs 
+* Dispatching builds to the slave for actual execution
+* Monitoring the Slaves
+
+
+
+#### Jenkins Slave
+
+
+A Slave is a java executable that runs on a remote machine. 
+
+Java executable is used to run jenkins servers and execute the jobs. 
+
+* I hears requests from Jenkins master instance.
+* Slaves can run on a variety of operating Systems.
+* The job of the slave is to do as they are told to , which involves executing build jobs dispatched by the master.
+
+![[Pasted image 20250312182230.png]]
+
+
+
