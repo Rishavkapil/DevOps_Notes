@@ -1,0 +1,28 @@
+name: Auto Push on Commit
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to monitor
+
+jobs:
+  auto-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Prevent GitHub Actions from using default credentials
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
+          git push https://${{ secrets.GITHUB_TOKEN}}@github.com/${{ github.repository }}.git main
+
