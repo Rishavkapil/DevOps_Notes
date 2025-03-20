@@ -1,28 +1,27 @@
-name: Auto Push on Commit
+name: Send Email on Push
 
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to monitor
+      - main  # Change if needed
 
 jobs:
-  auto-push:
+  send-email:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
         with:
-          persist-credentials: false  # Prevent GitHub Actions from using default credentials
-
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit and Push Changes
-        run: |
-          git add .
-          git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
-          git push https://${{ secrets.GITHUB_TOKEN}}@github.com/${{ github.repository }}.git main
+          server_address: smtp.gmail.com  # Use SMTP of your email provider
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New Push to Repo: ${{ github.repository }}"
+          body: "A new push has been made to the repository.\n\nCommit Message: ${{ github.event.head_commit.message }}\n\nView Changes: ${{ github.event.head_commit.url }}"
+          to: "rishavkapil2003@gmail.com"  # Replace with the recipient's email
+          from: "GitHub Actions <rishavkapil61@gmail.com>"
 
