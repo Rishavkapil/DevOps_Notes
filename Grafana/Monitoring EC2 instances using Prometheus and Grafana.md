@@ -123,7 +123,7 @@ $ [http://public-ip/9090](http://public-ip/9090)
 ![[Pasted image 20250324124342.png]]
 
 
-
+	
 #### Step 2 : Install the node exporter
 
 
