@@ -31,7 +31,7 @@
 				  - name: 'telegram'
 			    telegram_configs:
 			      - bot_token : 7643043590:AAHW0CFBSHR_S5NpRv260A8JzEXHoJt5xX4
-			        chat_id :1002554813188
+			        chat_id :-1002554813188
 		        message : "{{range.Alerts}} Alert : {{.Annotations.summary}}\n Description: {{.Annotations.description}}\n Severity: {{.Labels.severity}}\n"
 
 ## and if you are sending alerts from grafana
@@ -52,4 +52,4 @@ then you need to configure contact point for sending notifications like here i h
 ![[Pasted image 20250326132703.png]]
 
 
-then just click **save rule and exit** . 
+	then just click **save rule and exit** . 
