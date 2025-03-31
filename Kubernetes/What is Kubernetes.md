@@ -54,3 +54,14 @@ Now that we have all gone through the challenges of using Containerized applicat
 * **Self Healing mechanisms :** Kubernets constantly checks the health of nodes and containers, restarting those that fail , replacing them and killing those that don't respond to user-defined health checks . 
 
 
+* Kubernetes doesn't replace docker but complements it by handling the orchestration of containers created by docker. 
+
+* It addresses the challenge of running and connecting containers across multiple hosts, managing the complexity of high availability , and service discovery. 
+
+* Kubernetes is designed to respond to the dynamic nature of modern cloud environments, scaling up or down as needed and rolling out updates without downtime. 
+
+
+
+**Like if we are using ==PhonePe== and the organization has updated the UI , it will not affect the user experience because the previous version will stay until the session is not being restored**
+
+
