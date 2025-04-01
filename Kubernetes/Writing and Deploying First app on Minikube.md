@@ -142,5 +142,15 @@ To check the service , run the following command :
 you should see something like this 
 
 ![[Pasted image 20250401183038.png]]
+As we can see from the above table, the `hello-world-php` service has cluster IP `10.107.229.91` and ports `80:32313`. The Cluster IP is internal and not accessible from the host machine. While the ports, the first part indicates the internal service port and the second part indicates the exposed/external port. The external port is created randomly by Kubernetes. 
+
+
+The application output can be accessed from URL http://<minikube_ip>:<external_port>. The Minikube IP is the node IP assigned permanently during the Minikube installation. The Minikube IP can be retrieved by running command `minikube ip`.
+
+To test the application output, run the curl command:
+
+		$ curl http://192.168.49.2:32313  
+==Hello World! Greeting from hello-world-php-c8698996b-nc2j8==
+
 
 
