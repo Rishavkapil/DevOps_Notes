@@ -80,8 +80,8 @@ Controllers continuously look at and watch the health of node , whether it is re
 
 * **Pods :** 
 	It runs as the single instance of the application . 
-	It may have many resources like IP addresses , containers and storage . 
-	Pods ahve one or more containers that are deployed on the same host. 
+	It may have many resources like IP addresses, containers and storage . 
+	Pods have one or more containers that are deployed on the same host. 
 
 	In Kubernetes, the control unit is pod not the container. 
 
@@ -98,7 +98,7 @@ Controllers continuously look at and watch the health of node , whether it is re
 #### High Level Kubernetes Objects
 
 1. **Replica Set :** A replica sets contains a group of instances and a number of identical running pods.
-(Replica sets ensure that specified number of pod replicas are running at a given time . )
+(Replica sets ensure that specified number of pod replicas are running at a given time.)
 
 2. **Deployment :** Deployment maintains the desired state and versioning . 
 
