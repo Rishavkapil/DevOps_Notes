@@ -105,3 +105,9 @@ Controllers continuously look at and watch the health of node , whether it is re
 3. **Volume :** Kubernetes provide stable storage services in the form of volumes that persist data for the whole lifetime of the pod. 
 
 4. **Service :** Inside the Pods , multiple pods are in running mode under the selector , so in that case , the Service manages DNS addresses for them. 
+
+
+
+
+
+
