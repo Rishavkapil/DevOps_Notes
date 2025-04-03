@@ -250,3 +250,19 @@ Then it stores the new pod definition in the etcd .
 
 The scheduler checks the available worker nodes 
 It selects the best node based on CPU , RAM , and affinity rules. 
+Assigns the pod to that node. 
+
+### Step 4 : kubelet runs the pod
+
+The kubelet on the selected node receives the instructions. 
+
+It asks the container runtime to pull the image and start the container. 
+
+### Step 5 : Kuber-proxy configures networking 
+
+kube-proxy ensures the pod can communicate with other pods and services. 
+
+
+### Step 6 : Controller monitors and Maintain the Pod 
+
+If a pod crashes , the replication Controller automatically replaces it . ``
