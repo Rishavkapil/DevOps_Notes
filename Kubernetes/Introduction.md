@@ -37,3 +37,9 @@ like in previous problem with docker if there are 100 containers and one contain
 
 Kubernetes has the feature of **auto scaling**  even if the container is going down , the kubernetes will automatically . 
 when ever the API server receives a signal that server is going down, it immediately starts a new container. 
+
+
+In Kubernetes **we have pods and kubelet is responsible for maintaining all the pods**
+
+
+**kube proxy** provides IP address to each pod and is used for networking. 
