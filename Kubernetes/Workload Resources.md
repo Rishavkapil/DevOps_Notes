@@ -26,9 +26,9 @@ Each request is handled independently and any pod can process any request.
 ## Stateful applications
 
 
-A statefull application stores data and each pod has unique identity. 
+A stateful application stores data and each pod has unique identity. 
 
-- IF a pod dies, new pod must keeps the same data. 
+- If a pod dies, new pod must keeps the same data. 
 - for this we attach volumes to the pod 
 
 
@@ -215,4 +215,43 @@ There are three types of job execution patterns :
 	Runs one pod to completion 
 
 
-2. Parallel Jobs : 
+2. **Parallel Jobs (Multiple Pods at once ) :** 
+		Runs multiple pods in parallel , useful for large batch tasks. 
+
+
+				spec:
+				  completions: 5
+				  parallelism: 2
+this means 5 jobs will run but only 2 at a time . 
+
+
+3. **Indexed Jobs (For ordered Execution)** : 
+		pods are given indexes for ordering processing . 
+			used for splitting work , like processes 10000 files across 10 pods. 
+
+
+			spec:
+			  completionMode: Indexed
+			  completions: 10
+
+
+
+## Cronjobs : Scheduled Job Execution 
+
+
+A Cronjob in kubernetes is job that runs on a schedule , just like a Linux cron job. 
+
+
+### How cronjobs work 
+
+
+- User creates a CronJob with a schedule . 
+- The cronjob controller watches the schedule . 
+- At the scheduled time , the controller creates the job . 
+- The job runs the pod and executes the task . 
+- IF the job fails, kubernetes retries based on the restart policy. 
+
+	
+
+
+
