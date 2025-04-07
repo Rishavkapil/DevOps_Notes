@@ -157,5 +157,84 @@ You need to install an ingress controller . This is a pod that watches your ingr
 eg. Installing NGINX Ingress Controller (minikube)
 
 			minikube addons enable ingress
-	
 
+this runs an NGINX based ingress controller pod and exposes it via NodePort or loadBalancer. 
+
+
+
+## Step 3 : Create the Ingress resource 
+
+Now create the actual ingress object , this tells the ingress controller how to route the traffic. 
+
+				
+				apiVersion: networking.k8s.io/v1
+				kind: Ingress
+				metadata:
+				  name: my-ingress
+				  annotations:
+				    nginx.ingress.kubernetes.io/rewrite-target: /$1
+				spec:
+				  rules:
+				    - host: myapp.com
+				      http:
+				        paths:
+				          - path: /?(.*)
+				            pathType: Prefix
+				            backend:
+				              service:
+				                name: frontend-service
+				                port:
+				                  number: 80
+				          - path: /api/?(.*)
+				            pathType: Prefix
+				            backend:
+				              service:
+				                name: backend-service
+				                port:
+				                  number: 80
+
+
+**Breakdown :** 
+
+api request / goes to frontend-service
+
+any request /api goes to backend-service
+
+
+
+## Step 4 : What happens when some opens the website ?
+
+
+1. User visits : http://myapp.com/api/users. 
+2. DNS resolves myapp.com to an external IP of your ingress controller 
+3. Ingress controller receives the request 
+4. It checks the Ingress rules 
+	* /api/users matches /api
+5. It forwards requests to backend-service on port 80 
+6. Kubernetes routes it to one of the backend pods
+7. The backend pods processes it and returns a response. 
+8. Ingress controller sends the respose back to the user. 
+
+
+
+
+# **What Happens when you apply the Ingress resource** 
+
+
+1. kubectl apply -f ingress.yaml
+	* The kubeclt cli talks to the Kubernetes API server.
+
+
+2. API server receives the Ingress resource. 
+	* the api server authenticates the request , 
+	* It validate the ingress resource structure using the API schema . 
+	* If valid , it stores the ingress object in etcd . 
+
+3. Ingress Controller watches the API server. 
+	* The ingress controller runs the pod in your cluster
+	* It registers a **watch** on ingress objects via kubernets API 
+
+
+**What is watch in Kubernetes** ?
+
+A **watch** is a mechanism in kubernetes that allows components (like controllers, custom tools or ingress controller ) to monitor changes in real time. 
