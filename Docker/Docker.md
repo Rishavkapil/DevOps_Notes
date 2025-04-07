@@ -17,7 +17,7 @@ Lets understand some other problems after these
 
 
 
-## Why Containerisation
+## Why Containerization
 
 suppose i'm a developer and i have created a website and i want feedback from my friend of my website. Then i gave my code to my friend and now when he tried to run my code it shows some errors like "Reactjs not found " , "node not found , mongodb not found ," etc. 
 
