@@ -65,3 +65,31 @@ Why do we need this ?
 This helps new nodes or clients discover cluster information without needing full authentication. 
 
 
+
+### **kube-system**
+
+The namespace for the objects created by the kubernetes system. 
+
+It is used to run the core components of the kubernetes control plane and other system level systems. 
+
+
+Setting up namespace for a request 
+
+To set the namespace for the current request , use the `--namespace`  flag . 
+
+
+##### Setting the namespace preferences 
+
+You can permanently save the namespace for all subsequent kubectl commands in that ==context==. 
+
+**Context :** Context in kubernetes is like a shortcut or profile that tells kubectl . 
+
+"Which cluster , user or namespace should i use for this session ?"
+
+It lives inside your ~/.kube/config file and allows you to switch easily between environments. 
+
+
+	kubectl config set-context --current -n=<namespace_name> 
+
+
+
