@@ -8,3 +8,15 @@ SCP (Secure copy protocol ) is a command line tool used to securely transfer fil
 	scp -i your-key.pem <file_name> ubuntu@host_name:/<path_to_destinaion>
 
 
+# What is the difference between scp and cp ?
+
+
+==**cp**== : used to copy files locally (ie. within the same system )
+
+
+
+==**scp**== : Secure copy (remote file copy over SSH). 
+
+used to copy files between systems over a network. 
+uses SSH for secure file transfer.  
+

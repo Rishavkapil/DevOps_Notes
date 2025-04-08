@@ -26,3 +26,9 @@ Service Accounts exists as ServiceAccount Objects in the API server.
 Service account has following properties : 
 
 * **namespaced :** Each service account is bound to a kubernetes namespace. Every namespace gets default Service Account on creation. 
+
+
+
+In simple terms , when we apply a deployment file and we have defined the amount of resources that deployment can get ,We attach the service account with that deployment. 
+
+
