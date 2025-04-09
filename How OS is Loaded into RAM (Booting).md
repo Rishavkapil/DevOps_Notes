@@ -35,3 +35,12 @@
 	* Provides a menu (in multi-OS setups)
 	* Loads the kernel into memory 
 	* Passes control to OS kernel 
+
+
+
+
+
+###### What is MBR ?
+
+MBR stands for **master boot record.** 
+MBR is the first sector (first 512 bytes ) of storage device(like HDD or SSD ) when using the BIOS boot system. 
