@@ -1,4 +1,13 @@
 
+
+#### What is kubernetes API 
+
+- It is the set of rules and endpoints used to interact and control kubernetes cluster. 
+- Think of it like a menu of a restaurant - it defines what actions are available 
+- Examples of kubernets API resources : 
+	- /api/v1/pods
+	- /apis/apps/v1/deployments
+	- /api/v1/node
 # What are Service Accounts ?
 
 

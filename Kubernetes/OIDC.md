@@ -46,7 +46,7 @@ you run command like
 
 			kubectl get pods
 
-Your kubeconfig is configured to use OIDC . It attaches the token ID in the autherization : bearer < token > 
+Your kubeconfig is configured to use OIDC . It attaches the token ID in the authorization : bearer < token > 
 
 
 ### Step 3 :  Api server validates the token 
