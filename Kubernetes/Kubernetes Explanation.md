@@ -29,6 +29,7 @@ In these services , we provide label to Ip's of applications.
 
 We have two nodes , **Master Node** and **Worker Node** 
 
+**Types of Services :** 
 
 **cluster IP :** can access only within the node
 **NodePort :** can access only within EKS or minikube
