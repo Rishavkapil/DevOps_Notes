@@ -147,3 +147,9 @@ This service targets pods labelled as app: frontend (from the deployment )
 * NodePort -> Exposes the service externally on a port in the range of 30000-32767
 * 
 
+
+
+### template 
+this is the deployment configurations for a pod. 
+
+this is blueprint for a pod. 
