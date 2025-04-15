@@ -23,7 +23,7 @@ A volume is a logical space inside a docker where you can put bunch of data.
 So now **How to create a volume ?** 
 
 		
-		sudo docker volume create volume_database
+		 docker volume create volume_database
 
 
 BY running the above command we have created a logical space i.e volume in our docker engine. 
@@ -71,7 +71,7 @@ and it will only get deleted manually.
 
 
 
-Every container has its own network . IF we do `ping localhost ` inside a container it refers to the localhost of container itself not the localhost of system/machine.
+Every container has its own network . If we do `ping localhost` inside a container it refers to the localhost of container itself not the localhost of system/machine.
 
 
 

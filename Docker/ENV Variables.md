@@ -1,4 +1,4 @@
-lEnvironment variables  are used to store app secrets and configuration data, which are retrieved by running app when needed. 
+Environment variables  are used to store app secrets and configuration data, which are retrieved by running app when needed. 
 
 
 Environment variables add dynamicity to your static code base

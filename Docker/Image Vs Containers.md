@@ -17,7 +17,7 @@ Docker file Example :
 		Base image				`FROM node:20 
 
 
-**Base img is a starting point for for building a Docker image. It is a foundational environment upon which you can add your application code , dependencies and configurations.**
+**Base img is a starting point for building a Docker image. It is a foundational environment upon which you can add your application code , dependencies and configurations.**
 
 	
 
