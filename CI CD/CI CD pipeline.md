@@ -1,3 +1,4 @@
+
 CI CD pipeline is an automated workflow that encompasses steps for continues integration , continues delivery and deployment. 
 
 Continues Integration and Continues Deployment pipeline is a series of steps that must be performed in order to deliver new version of software. 
