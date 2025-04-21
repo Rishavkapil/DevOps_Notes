@@ -54,3 +54,56 @@ wordpress/
 ```
 
 
+## How Helm works
+
+1. **Helm Chart** : A helm chart is a folder that contains all the YAML templates and values file to provide a dynamic configurations . 
+
+Folder structure looks like : 
+
+
+		mychart/
+		├── Chart.yaml        # Chart metadata
+		├── values.yaml       # Default config values
+		└── templates/
+		    ├── deployment.yaml
+		    ├── service.yaml
+		    └── ingress.yaml
+
+
+2. **Installing a chart**: 
+	Run : 
+		
+			helm install my-release ./mychart
+
+	Helm will: 
+	* Read `values.yaml`
+	* Render all templates under `template/` using these values
+
+
+3. **Templates and Values**: 
+	* Templates contain placeholders using Go templating
+	* You can override values in values.yml 
+		
+			helm install my-release ./mychart -f custom-values.yaml
+
+4. **Upgrading a release**:
+
+	Modify the chart or values and run 
+
+			helm upgrade my-release ./mychart
+
+5. **RollBack support** : 
+
+	Helm keeps a history of your releases and you can rollback if needed . 
+
+				helm rollback my-release 1
+
+6. **Repositories**: 
+
+	You can fetch and install charts from public repositories (like Bitnami or ArtifactHub etc. )
+
+			helm repo add bitnami https://charts.bitnami.com/bitnami
+			helm install my-redis bitnami/redis
+
+
+
