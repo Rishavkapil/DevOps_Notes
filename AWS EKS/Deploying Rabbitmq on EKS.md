@@ -90,3 +90,59 @@ This file requests storage from the cluster . Think of it like saying "Hey Kuber
 **What it does**
 
 This file deploys RabbitMQ using the management version . It also attaches the PVC to store message queues and broker data persistently . 
+
+
+
+`replicas : 1 ` One 1 rabbitMQ instance 
+
+`image` :  Uses official rabbitmq:3-management image
+
+`containerPort 5672 ` : Default AMQP Port -- used by apps to send/receives messages
+
+`containerPort 15672`: RabbitMQ management UI
+
+`volumeMounts.mountPath` : where inside the container volume is mounted 
+
+`volumes.persistentVolumeClaim.claimName` : Binds the volume to the rabbitmq-pvc
+
+
+
+
+## 4. Creating Service file 
+
+				`apiVersion: v1
+				kind: Service
+				metadata:
+				  name: rabbitmq
+				spec:
+				  selector:
+				    app: rabbitmq
+				  ports:
+				    - name: amqp
+				      port: 5672
+				      targetPort: 5672
+				    - name: management
+				      port: 15672
+				      targetPort: 15672
+				  type: ClusterIP
+
+
+`
+
+
+**What it does**
+
+This field creates a Service to expose RabbitMQ inside the cluster. 
+
+
+`selector` : Matches the pod label app: rabbitmq to route traffic 
+
+`port ` : Port other pods use to connect 
+
+`targetPort` : Port inside the container 
+
+`type: ClusterIP ` : Only accessible within the cluster 
+
+
+
+
