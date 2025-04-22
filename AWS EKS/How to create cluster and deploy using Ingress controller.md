@@ -19,7 +19,7 @@ you can create on with the eksctl using
 				  --name my-cluster \
 				  --region ap-south-1 \
 				  --nodegroup-name my-nodes \
-				  --nodes 2 \
+				  --nodes 1 \
 				  --node-type t3.medium \
 				  --with-oidc \
 				  --managed
