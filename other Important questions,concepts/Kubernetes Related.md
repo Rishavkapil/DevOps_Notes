@@ -82,7 +82,6 @@ It handles :
 
 
 
-
 ## What happens when a pod makes an outbound request (e.g api calls or hits the internet ) ?
 
 
