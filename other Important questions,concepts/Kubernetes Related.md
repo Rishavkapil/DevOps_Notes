@@ -10,7 +10,7 @@ When you deploy a pod ( via a deployment ) in your EKS cluster , the logs genera
 Stored on the node(i.e EC2 instance or you can say worker node) where the pod is running - not on your local machine. 
 
 
-#### Here's what happens in detail 
+###### Here's what happens in detail 
 
 * EKS uses EC2 instances as worker nodes. 
 * Each pod runs as a container on one of those EC2 instances. 
@@ -24,3 +24,81 @@ Stored on the node(i.e EC2 instance or you can say worker node) where the pod is
 
 
 But you can't access them directly unless you ssh into the EC2 instance. 
+
+
+
+## Where are the secrets in kubernetes stored ??
+
+
+**What are kubernetes secrets ?**
+A secret is a kubernetes object used to store sensitive data, like : 
+
+passwords, api tokens , ssh keys etc. 
+
+
+**Where are they stored ?**
+
+They are stored in the **etcd** of the master node or control plane 
+
+
+
+
+## How  kubernetes Service routes traffic to pods ?
+
+
+When you create a service , kubernetes automatically : 
+
+- Watches all the pods that matches the selector (eg. app:  my-app)
+- Creates a list of Endpoints - IP's for all the matching pods 
+- Uses kubeproxy on each node to route traffic to those endpoints. 
+
+
+
+## What are iptables ?
+
+
+**Iptables** is a Linux Firewall that manages **packet filtering and NAT** rules . 
+
+
+* When you create a service , kube-proxy uses **iptables** to create rules. 
+* These rules forward traffic from the server ip to one of the pod's IP. 
+
+
+
+
+## What is CNI(Container Network Interface) ?
+
+
+CNI is a plugin used by kubernetes to **configure networking for containers** . 
+
+It handles : 
+
+* assigning IP addresses . 
+* Setting up routing 
+* Managing network namespaces 
+* Connecting containers to outside world
+
+
+
+
+
+
+## What happens when a pod makes an outbound request (e.g api calls or hits the internet ) ?
+
+
+
+
+##### 1. Pod makes a request 
+
+* The request originates from a pod. 
+* The pod gets the IP address from the CNI plugin (like aws-vpc-cni etc. )
+
+##### 2. CNI handles Network routing
+
+* The pod's IP is the part of Node's network interface. 
+* The request goes from pod -> Node's network interface.
+
+##### 3. Nodes sends packets to internet 
+
+The Node's OS routes the packets to the internet via the VPC's internet gateway. 
+
