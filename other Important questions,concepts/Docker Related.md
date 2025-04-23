@@ -95,3 +95,37 @@ Means:
 
 
 
+## What happens when you run a docker container ?
+
+
+**Step 1 : Docker image pull**
+
+when you run : 
+
+	docker run ubuntu
+
+
+- Docker checks the local image cache to see if ubuntu is available 
+- IF NOT  docker contacts the docker registry (DockerHub default) and : 
+	- authenticates it , if needed 
+	- Downloads the image layers (each image is made up of layered file systems)
+	- stores them in `/var/lib/docker/overlay2`
+
+
+**Step 2 : Container Creation**
+
+
+Docker uses **UnionFS** to create container from the image by : 
+
+- Creating a read-write layer on top of the read-only image layers
+- setting up containerID , metadata , and mounting the root file system.
+
+
+	Now What is **UNIONFS** ?
+		**UNIONFS** is a technology that allows multiple layers of the file system to be combined into a single , unified view. 
+
+
+**Step 3 : Setting up the namespaces (Isolation)
+
+
+Docker isolates containers using Linux Namespaces 
