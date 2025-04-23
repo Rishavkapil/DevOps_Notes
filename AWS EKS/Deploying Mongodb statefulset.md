@@ -109,3 +109,65 @@ Now imagine this :
 When you run mongodb in production , you usually run it in something called replica set . 
 
 
+
+|Node|Role|
+|---|---|
+|mongodb-0|Primary (writes)|
+|mongodb-1|Secondary (reads)|
+|mongodb-2|Secondary (reads)|
+
+
+* All the data is written to the primary 
+* The secondary copies data from the Primary 
+* If the Primary dies , One secondary becomes the new primary. 
+
+To make this work ,
+Each Mongodb pod must be able to talk to each other directly by their hostname.
+
+
+
+
+## Now to create a Headless service 
+
+
+				# mongodb-statefulset.yaml
+				apiVersion: apps/v1
+				kind: StatefulSet
+				metadata:
+				  name: mongodb
+				spec:
+				  selector:
+				    matchLabels:
+				      app: mongodb
+				  serviceName: "mongodb"
+				  replicas: 3
+				  template:
+				    metadata:
+				      labels:
+				        app: mongodb
+				    spec:
+				      containers:
+				        - name: mongodb
+				          image: mongo:5.0
+				          ports:
+				            - containerPort: 27017
+				          volumeMounts:
+				            - name: mongo-persistent-storage
+				              mountPath: /data/db
+				  volumeClaimTemplates:
+				    - metadata:
+				        name: mongo-persistent-storage
+				      spec:
+				        accessModes: [ "ReadWriteOnce" ]
+				        storageClassName: "ebs-sc"
+				        resources:
+				          requests:
+				            storage: 5Gi
+
+
+
+Now apply all files 
+
+
+
+
