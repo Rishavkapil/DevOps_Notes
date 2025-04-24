@@ -13,4 +13,13 @@ A full node stores a complete copy of the blockchain and validates every transac
 while a light node relies on full nodes for transaction validation and only stores a small portion of the blockchain data.
 
 Archive nodes store all historical data and are used for historical queries.
-		
+
+
+
+just follow this video : https://youtu.be/anyBoghKp3I?si=4kUeP54OTdc0AyT2 to make notes
+
+
+:)
+
+
+
