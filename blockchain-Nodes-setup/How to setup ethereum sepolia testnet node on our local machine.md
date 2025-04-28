@@ -11,6 +11,13 @@ To install geth , go to https://geth.ethereum.org/docs/getting-started/installin
 
 
 To run geth in the development mode : 
-First go to the directory in which you downloaded the geth ,(i'll recommend to create another directory for this project )
+First go to the directory in which you downloaded the geth ,(i'll recommend to create another directory for this project)
+
+**We first need to create an account**
+
+		geth --datadir <path_to_directory> account new
+		
+then we need to create a file for secrets in which we will store the password of our account that we just created using above command . 
+
 
 
