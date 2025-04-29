@@ -50,3 +50,9 @@ to check balance `eth.getBalance`
 
 When you run this you will be connected with your sepolia network 
 
+
+## Step 4 : Connect with Consesus client 
+
+
+Now we need to connect this with the consesus client for that we first need to download the consensus client for the sepolia network 
+
