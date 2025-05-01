@@ -53,3 +53,12 @@ Count the number of files and processes
 
 
 file system got corrupted
+
+
+### How to check kernel routing information 
+
+There are 3 commands to check for kernel routing information. 
+
+		route -n
+		netstat -rn 
+		ip route 
