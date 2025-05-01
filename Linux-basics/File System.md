@@ -32,3 +32,59 @@ Linux treats everthing as file - including directories , hardware devices , and 
 			├── tmp        # Temporary files
 			├── usr        # User utilities and applications
 			├── var        # Variable data (logs, mail, etc.)
+
+
+### File System Types (Format)
+
+
+Just like windows has NTFS or FAT32 , Linux supports multiple file systems. Common ones include : 
+
+ext4 
+xfs : Good for large files and scalability 
+btrfs : Advanced supports snapshots and compression
+
+
+### Important file system Commands 
+
+
+##### Checking file system
+`df -h` : shows disk free in human readable format 
+
+`du -sh /path`  : shows size of a directory 
+
+`lsblk `: List block devices 
+
+
+##### Mounting file system 
+
+		mount /dev/sbd1 /mnt 
+		unmount /mnt
+
+
+##### File System Creation 
+
+		mkfs.ext4 /dev/sbd1
+
+
+#### Other Important Concepts 
+
+1.  **Inodes**
+		- Each file has inode which stores metadata. 
+		- To see inode info : 
+			- ls -i
+
+2. **Mount Points**
+		- Linux uses a single directory tree,
+		- Devices are mounted to directories (mount points ) to become accessible 
+		- You can mount a new disk under /data , /mnt etc. 
+
+3. **Symbolic VS Hard Links :** 
+		- Hard Link : Points directly to the inode
+		- Soft Link : Points to the file path 
+
+
+4. **fstab:**
+		File : /etc/fstab
+		Defines file system to be mounted at boot. 
+		Example : /dev/sbd1        /data       ext4       defaults       0        0 
+
