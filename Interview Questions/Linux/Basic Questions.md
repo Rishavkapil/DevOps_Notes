@@ -44,3 +44,12 @@ Count the number of files and processes
 
 
 ### We are unable to unmount the file system , what are the reasons behind it 
+
+
+1. Either you are in the same directory (try to get path by using pwd)
+
+
+### What could be the reason if server takes more time after reboot ?
+
+
+file system got corrupted
