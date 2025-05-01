@@ -67,6 +67,8 @@ Example : a web app with frontend , backend and database.
 
 #### Registries
 
+- A cloud based image repositories where you can push and pull images.
+- DockerHub is the default registry 
 
-A cloud based image repositories where you can push and pull images.
-DockerHub is the default registry 
+
+
