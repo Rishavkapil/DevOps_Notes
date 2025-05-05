@@ -51,4 +51,25 @@
 
 #### You changed a single line in the Dockerfile , but the build still takes too long . Why ?
 
-* Docker uses layer cache
+* Docker uses layer cache: Changing early layer invalidates later caches. 
+
+
+### Persistent Data 
+
+#### You stop and remove a container , but all uploaded user data is lost . What went wrong ?
+
+
+* Data was stored in the container's ephemeral layer. 
+* Solution : Use volumes : 
+
+			docker run -v /host/path:/container/path ...
+
+
+### Debugging a Hanging Container 
+
+#### A Container runs but seems to hang and produce no output.
+
+* Use `docker inspect -it <container> bash` to inspect it .
+* Check entrypoints of CMD in Dockerfile. 
+
+
