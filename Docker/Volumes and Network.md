@@ -12,9 +12,6 @@ When ever you restart the system you get a fresh container.
 
 We want one docker container to talk to another docker container thats why we need networks in docker
 
-
-
-
 So **what is a VOLUME ??**
 
 A volume is a logical space inside a docker where you can put bunch of data.
@@ -26,16 +23,13 @@ So now **How to create a volume ?**
 		 docker volume create volume_database
 
 
-BY running the above command we have created a logical space i.e volume in our docker engine. 
-
+By running the above command we have created a logical space i.e volume in our docker engine. 
 
 **Docker engine :**  Docker engine is a core component of docker platform , it provides runtime environment for containers , allowing users to build , run and manage containerized applications. 
-
 
 next step is 
 
 		sudo docker run -v volume_database:/data/db -p 27017:27017 mongo
-
 
 this means run the mongo with volume mapped to /data/db 
 
@@ -43,9 +37,6 @@ this means run the mongo with volume mapped to /data/db
 
 
 whenever you run `docker run mongo` the place where all the data is stored inside that container is /data/db
-
-
-
 
 
 **`sudo docker exec -it container_id  /bin/bash`**
@@ -67,7 +58,6 @@ and it will only get deleted manually.
 
 
 Every container has its own network . If we do `ping localhost` inside a container it refers to the localhost of container itself not the localhost of system/machine.
-
 
 
 
