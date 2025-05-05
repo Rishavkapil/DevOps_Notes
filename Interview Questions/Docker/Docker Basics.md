@@ -73,3 +73,38 @@
 * Check entrypoints of CMD in Dockerfile. 
 
 
+
+
+### Dockerfile not working in CI/CD
+
+#### Your build works locally but fails in CI/CD pipeline. The error mentions "missing dependencies " or "file not found"
+
+
+* Ensure all necessary files are included in the build context. 
+* Check .dockerignore - it might be excluding required files. 
+* Absolute vs Relative paths : CI might run in a different working directory. 
+
+
+### Inter Container Communication
+
+#### Your app container can't reach the database container by hostname. Both are in docker compose. 
+
+
+* Make sure both containers are on the same user-defined network(Docker compose does this automatically. )
+* Use the docker compose from `docker-compose.yml` as the hostname. 
+* Check the port mismatches and container health status. 
+
+
+
+### Volume not persisting Data
+
+#### You are using a volume to persist data , but everytime the container restarts ,the data disappears. 
+
+* Make sure you are using matched volumes , not anonymous ones: 
+		
+			docker run -v myvolume:/data ...
+
+
+### Continues Deployment with Docker 
+
+#### You want to push updated images
