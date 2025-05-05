@@ -19,7 +19,10 @@
 * For Cloud Deployments, prefer IAM roles 
 
 
+### How do you resolve CI test failures that pass locally ?
 
-### What Strategies can you implement in your pipeline to support quick rollbacks ?
+* Check for environment differences 
+* Review test flakiness or timing issues. 
+* Ensure tests do not depend on local state or services 
 
-* Use versioned deployments 
+
