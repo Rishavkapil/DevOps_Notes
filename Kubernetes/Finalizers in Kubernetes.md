@@ -1,4 +1,4 @@
-
+    
 
 Finalizers in kubernetes are like "cleanup hooks " that let you tell kubernets : 
 
