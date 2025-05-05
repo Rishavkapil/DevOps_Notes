@@ -107,4 +107,38 @@
 
 ### Continues Deployment with Docker 
 
-#### You want to push updated images
+
+
+* Setup CI/CD pipeline : 
+	* Build docker image (docker build )
+	* Push to registry (docker push )
+	* Deploy via docker-compose pull && up -d  or via kubernetes 
+* Tag images properly 
+* Use webhooks or Github Actions/GitLab CI. 
+
+
+
+### Preventing root access
+
+You security team requires container to not run as root . How do you comply ?
+
+In Dockerfile : 
+
+RUN adduser --disabled-password myuser
+USER myuser
+
+Avoid USER root
+
+
+### Cleaning up disk space
+
+##### The disk is full due to Docker usage. How do you clean it ?
+
+*  Remove unused images : 
+
+			docker system prune -a 
+
+* Remove unused volumes:
+
+			docker volume prune
+		
