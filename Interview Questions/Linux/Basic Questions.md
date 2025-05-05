@@ -62,3 +62,8 @@ There are 3 commands to check for kernel routing information.
 		route -n
 		netstat -rn 
 		ip route 
+
+
+### What is default gateway in linux
+
+The default gateway in linux is the IP address of a router that your system uses to send traffic to destinations outside its local subnet 

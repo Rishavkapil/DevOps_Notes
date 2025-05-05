@@ -48,12 +48,10 @@ whenever you run `docker run mongo` the place where all the data is stored insid
 
 
 
-
 **`sudo docker exec -it container_id  /bin/bash`**
 
 
 the above commnd lets you go inside that container
-
 
 
 
@@ -65,9 +63,6 @@ and it will only get deleted manually.
 
 
 			docker volume rm volume_database
-
-
-
 
 
 
