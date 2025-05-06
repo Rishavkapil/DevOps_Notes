@@ -14,7 +14,7 @@ It automates build, test , and deployment tasks by executing jobs triggered by e
 
 **Jenkins**  is used for several reasons in software development process. Some of them are : 
 
-1. **Continues Intigeration :** Jenkins facilitates CI by automatically building and testing software whenever changes are made in the code base. 
+1. **Continues Integration :** Jenkins facilitates CI by automatically building and testing software whenever changes are made in the code base. 
 2. **Automated Testing :** 
 3. **Continues Delivery and Deployment(CD)**
 4. **Open-Source and Cost effective** 
@@ -51,7 +51,7 @@ A pipeline typically consists of multiple stages, each representing a distinct p
 1. **Checkout :**  This phase consist of retrieving the latest version of the source code from the version control system (such as Git ) to begin the pipeline process. 
 
 2. **Build :**  In this stage, source code is compiled and built into executable artifacts or packages. 
-	*  artifacts are the files generated during the build process, such as compiled binaries , test reports , configuration files etc. 
+	*  artifacts are the files generated during the build process, such as compiled binaries, test reports , configuration files etc. 
 
 3. **Test :** Test Stage includes various types of tests including unit tests, integration tests etc. 
 
@@ -70,8 +70,6 @@ Plugins in Jenkins are small independent programs that enhance and extend the fu
 
 
 Plugins are software components that extends the functionality of Jenkins automation server. They are used to enhance and customize Jenkins to support various builds , test and deployment scenarios. 
-
-
 
 
 #### Nodes in Jenkins
