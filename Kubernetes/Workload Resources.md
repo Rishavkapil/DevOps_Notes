@@ -16,7 +16,6 @@ Workload resources in kubernetes define how applications (pods) should run . The
 * Statefull 
 
 
-
 ## Stateless applications 
 
 A **Stateless application** does not store any data inside the pod . 
@@ -42,7 +41,6 @@ A deployment is a container that manages a set of stateless pods .
 - Ensure automatic healing (if pod crashes , new pod is automatically created )
 
 ### Example deploying a webpage with 3 replicas 
-					
 					
 					
 					apiVersion: apps/v1
@@ -156,7 +154,6 @@ A StateFulSet is like a deployment but for stateful applications (e.g Databases)
 When a user applies daemonSet YAML , the DaemonSet Controller (part of the kubernetes control plane) takes over. 
 
 
-
 #### 2. API Server stores it in etcd
 
 The request is sent to kubernetes API server (kube-apiserver)
@@ -179,13 +176,9 @@ The kubelet on each node receives instructions to run the pod. and the pod is au
 If a node fails , the kubernetes will reschedule the Daemonset Pod to the new Node when it becomes available . 
 
 
-
-
-
 # Jobs and Cronjobs (For onetime or Scheduled tasks)
 
 In kubernetes , Jobs and Cronjobs are used to run tasks that execute once or on a schedule. These are different from Deployments or DaemonSets because they do not run continuously. Instead they run a task , complete it and terminate. 
-
 
 
 ## Jobs : One time task Execution 
@@ -196,7 +189,6 @@ Jobs are useful for :
 
 Batch Processing , Database migrations , Backup and restore tasks , Machine learning Training jobs etc. 
 
-
 ### How jobs work 
 
 - The user creates a job . 
@@ -205,7 +197,6 @@ Batch Processing , Database migrations , Backup and restore tasks , Machine lear
 - Each pod runs until it completes successfully 
 - If the pod fails the kubernetes retries it , based on the restart policy. 
 - Once the job reaches the desired completion count , it stops creating new pods . 
-
 
 
 #### Controlling job execution 
