@@ -1,5 +1,4 @@
 
-
 ## Step 1 : Creating a VPC
 
 
