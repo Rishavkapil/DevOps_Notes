@@ -2,7 +2,7 @@
 
 First you need to login as the default user (ubuntu)
 
-#### Step 2 : Swithc to root user 
+#### Step 2 : Switch to root user 
 
 		sudo -i 
 
