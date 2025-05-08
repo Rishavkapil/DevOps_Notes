@@ -33,10 +33,20 @@ List the changed files and directories in a container file system since the cont
 #### Docker Container Export : 
 
 
-
 Exports a container file system as a **tar archive** . 
 
 
 **Tar archive** : A file that contains layers of docker images. Each layer itself is a tar file , and when all these layers are extracted to the same location , they form the filesystem of the container. 
 
 
+
+
+#### Docker Container Save 
+
+
+Save one or more images to a tar archive
+
+		docker image save <image_id>
+
+
+Produces a tarred repository to a standard output stream . Contains all parent layers , and all tags + versions or specified repo:tag , for each argument provided. 
