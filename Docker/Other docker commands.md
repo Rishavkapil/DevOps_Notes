@@ -38,3 +38,5 @@ Exports a container file system as a **tar archive** .
 
 
 **Tar archive** : A file that contains layers of docker images. Each layer itself is a tar file , and when all these layers are extracted to the same location , they form the filesystem of the container. 
+
+
