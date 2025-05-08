@@ -6,7 +6,6 @@
 2. **Worker Node**
 
 
-
 ### Worker Nodes
 
 
