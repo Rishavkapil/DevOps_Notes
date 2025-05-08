@@ -40,8 +40,12 @@ Exports a container file system as a **tar archive** .
 
 
 
+#### Docker container import
 
-#### Docker Container Save 
+
+used to import compressed container 
+
+#### Docker image Save 
 
 
 Save one or more images to a tar archive
@@ -50,3 +54,18 @@ Save one or more images to a tar archive
 
 
 Produces a tarred repository to a standard output stream . Contains all parent layers , and all tags + versions or specified repo:tag , for each argument provided. 
+
+
+#### docker image load
+
+used to load compressed images like `cal.tar.gz`
+
+
+
+## Note : The main difference between save and export 
+
+
+**save is used for images and export is used for containers**
+
+
+
