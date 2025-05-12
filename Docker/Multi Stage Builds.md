@@ -1,21 +1,12 @@
-
-
-
 ##### **node and nodemon** 
 
 when we run using nodemon , it watches our index.js file 
 
 after we make any change in index.js file it automatically restarts 
 
-
-
-
-
-
 ## What are multi Stage builds 
 
 Multi staged builds in docker allows developers to split the build process into multiple stages within single docker file.
-
 
 
 **what if we want to allow the dev backend to hot reload ? but not the production environment ?**
