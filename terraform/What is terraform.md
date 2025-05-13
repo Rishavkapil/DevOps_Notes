@@ -87,3 +87,6 @@ Shows what terraform will do - without making changes . Think of it as a dry run
 Terraform executes the plan , creates modifies the infrastructure , updates the state file 
 
 
+##### What is the difference between terraform and ansible 
+
+Terraform is used when we need to create infrastructure and Ansible  is used when our infrastructure is ready or already created and to configure that we use ansible. 

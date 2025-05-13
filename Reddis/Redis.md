@@ -1,4 +1,4 @@
-**REDIS** (Remote Directory Server) is an open source , in-memory, NO-SQL key/value store that is primarily used as application cache or quick response database. 
+**REDIS** (Remote Directory Server) is an open source , in-memory, NO-SQL key/value store that is primarily **used as application cache** or quick response database. 
 
 Redis stores data in-memory(RAM) rather then on a disk or solid-state drive(SSD) which helps deliver unparalleled speed, reliability, and performance.
 
