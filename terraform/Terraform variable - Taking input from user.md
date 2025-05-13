@@ -31,3 +31,32 @@ and in other terraform file , all would be same like
 	output printname{
 		value = "Hello ${var.username}"
 		}
+
+
+We can also pass this in Command line like
+
+			terraform plan -var "username=Rishav"
+
+
+
+If we want to setup the default value for our variable we can also do that
+
+		variable username {
+			default = "World"
+		}
+
+In this case, it won't prompt for input , it will just simply print the World , if want to pass our own variable , we can do it by passing it via command line 
+like 
+
+			terraform plan -var "username=Rishav"
+
+
+**NOTE : Terraform will only prompt for input if its not set**
+
+
+
+### Multiple Variables 
+
+
+
+
