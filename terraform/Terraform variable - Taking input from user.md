@@ -55,8 +55,3 @@ like
 
 
 
-### Multiple Variables 
-
-
-
-
