@@ -25,3 +25,18 @@ now set the value of username variable in the environment using the below comman
 ```sh
 export TF_VAR_username=Rishav
 ```
+
+
+
+
+To save the environment variables permanently , you need to store them in 
+`~/.bashrc file `
+
+
+
+
+for example 
+		
+		export $TF_VAR_ACCESS_KEY="your-access-key"
+
+
