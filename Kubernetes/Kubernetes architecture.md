@@ -1,6 +1,6 @@
 
 
-**There are tow types of nodes on which kubernetes operates on :** 
+	**There are tow types of mnodes on which kubernetes operates on :** 
 
 1. **Master Node** 
 2. **Worker Node**

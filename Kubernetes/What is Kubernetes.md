@@ -1,4 +1,4 @@
-
+	
 Kubernetes is an open source platform designed to automate deploying, scaling and operating application containers . 
 
 It simplifies the developers tasks of managing containerized applications . 
