@@ -127,7 +127,7 @@ The kubernetes API server receives the request and stores pods definition in ETC
 
 ## Step 3 : Scheduler assigns a node
 
-The kubernetes scheduler picks a suitable worker node based on : 
+				The kubernetes qscheduler picks a suitable worker node based on : 
 *  Resources availability 
 * Node selectors and **affinity rules** (defines on which node should pod run)
 * **Taints and toleration** (taints prevents pods running on a node unless they have a matching toleration )
