@@ -142,3 +142,12 @@ Avoid USER root
 
 			docker volume prune
 		
+
+
+
+### How to check resource usage of running containers in Docker
+
+
+`docker stats ` command is used to monitor the resource usage of running Docker Containers in real-time. 
+
+
