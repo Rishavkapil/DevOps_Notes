@@ -27,3 +27,14 @@ The following network drivers are available by default and provide core network 
 | `overlay` | Overlay networks connect multiple Docker daemons together.               |
 | `ipvlan`  | IPvlan networks provide full control over both IPv4 and IPv6 addressing. |
 | `macvlan` | Assign a MAC address to a container.                                     |
+
+
+
+#### Connecting to multiple networks 
+
+A container can be connected to multiple networks. 
+
+For example, a frontend container may be connected to a bridge network for external access, and --internal network to communicate with containers running backend services that do need external network access. 
+
+A container may be connected to different type of network . For example , ipvlan network to provide internal access, and bridge network for access to local services. 
+
