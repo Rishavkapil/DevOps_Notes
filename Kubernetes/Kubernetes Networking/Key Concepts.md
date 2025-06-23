@@ -15,3 +15,8 @@ Kubernetes networking is a fundamental concept that enables communication betwee
 
 * **Container to Container Communication :** Containers within the same pod communicates over localhost because they share the same network namespace. 
 * **Pod-to-Pod communication :** Pods communicate directly using their IP addresses, whether they are on the same node or different nodes. This communication is handled by the pod network(or cluster network) that kubernetes sets up. 
+
+
+
+## The Kubernetes Networking Model 
+
