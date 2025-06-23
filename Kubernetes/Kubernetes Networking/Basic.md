@@ -12,3 +12,6 @@
 
 - Container to Container communication on the same pod happens through localhost within container.
 
+
+
+The contaiumairmd385ner running in any kubernetes cluster does not have its own ip , it uses the Ip of the pod. So if there are multiple containers running on the same pod , they will communicate via localhost and will serve on different ports on same ip 
