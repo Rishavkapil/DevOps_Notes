@@ -34,3 +34,30 @@ so in summary,
 * **NoExecute:** Existing pods on the node without matching tolerations are evicted. 
 
 
+**Taint Syntax :** 
+
+```
+kubectl taint nodes <node_name> key1=value1:<taint-effect>
+```
+
+
+
+A taint is defined with three components : 
+
+* **Key :** The key of the taint to tolerate. 
+* **Value :** The value of taint to tolerate. 
+* **Effect :** Specifies the effect of the taint to tolerate. 
+
+
+```
+tolerations: 
+- key: "key1"
+  operator: "Equal"
+  value: "value1"
+  effect: "NoSchedule"
+```
+
+
+**Toleration Operations:**
+
+
