@@ -100,3 +100,51 @@ spec:
 
 
 When you try to create this pod in your kubernetes cluster, it won't be placed on the target node and it will be in `pending` state since we have added taint to the worker node. 
+
+
+```
+kubectl apply -f nginx-pod.yaml
+```
+
+It won't be scheduled and it will be in pending state, 
+Now modify the nginx pod manifest by adding tolerations to it same as below : 
+
+
+```
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: nginx
+spec: 
+  containers:
+  - name: nginx
+    image: nignx
+  tolerations: 
+  - key: "nginx-node"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
+```
+
+
+
+Now lets apply the above manifest file and see if it is scheduled on target node. 
+
+
+```
+ kubectl apply -f nginx-pod.yaml 
+```
+
+
+
+
+
+#### Use Cases and Best Practices
+
+1. **Isolating Critical Workloads :** Taint Critical Nodes and add tolerations to critical pods to ensure they run only on these nodes. 
+
+
+2. **Dedicated Nodes for specialized Tasks :** Taint Nodes with hardware accelerators or specialized hardware and add tolerations to pods requiring those resources. 
+
+
+3. **Node Maintenance :** Use taints to gracefully evacuate nodes for maintenance by tainting them with "NoExecute" effect and add tolerations to workload pods to allow them to drain safely. 
