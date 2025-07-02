@@ -60,4 +60,43 @@ tolerations:
 
 If there is a taint on a node , any pod that comes to it will not be scheduled on that node expect some specific pods.
 
-If you want to schedule a pod on that node , then you need to a toleration with the same value as added in taint. 
+If you want to schedule a pod on that node , then you need to a toleration with the same value as added in taint.
+
+
+**NOTE :  Taint hum Node pe lagate hai and Toleration Hum Pod Pe lagate hai.** 
+
+
+**Toleration Operations :**  
+* **Equal:** Requires an exact match for the taint key and value. 
+* **Exists:** Requires only presence of taint key, irrespective of its value. 
+* **Exists with an effect :** Requires only the presence of taint with a specific effect, irrespective of its key and value. 
+
+**Example**
+
+In this example, the NGINX pod has toleartion that matches the taint with `nginx-node=true` and `NoSchedule` effect, allowing it to be scheduled on nodes with that taint. 
+
+Lets first add a taint to a node using the below command , 
+
+```
+kubectl taint nodes <node_name> nginx-node=true:NoSchedule
+```
+
+
+with the above command the node is tainted with `nginx-node=true:NoSchedule`. 
+Now lets create nginx pod without any toleration and see if it is scheduled on any node or not. 
+
+**nginx-pod.yaml**
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+```
+
+
+When you try to create this pod in your kubernetes cluster, it won't be placed on the target node and it will be in `pending` state since we have added taint to the worker node. 
