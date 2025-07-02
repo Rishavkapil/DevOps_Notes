@@ -6,3 +6,9 @@ A ConfigMap allows you to decouple environment-specific configuration from your 
 
 
 NOTE : ConfigMap does not provide secrecy or encryption. If the data you want to store in confidential , then use a Secret rather than configMap
+
+
+
+### ConfigMap Object 
+
+A ConfigMap is an api object that lets you store configuration for other objects to use. Unlike most kubernetes objects that have a spec, a 
