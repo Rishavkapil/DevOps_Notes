@@ -146,5 +146,5 @@ Now lets apply the above manifest file and see if it is scheduled on target node
 
 2. **Dedicated Nodes for specialized Tasks :** Taint Nodes with hardware accelerators or specialized hardware and add tolerations to pods requiring those resources. 
 
-
-3. **Node Maintenance :** Use taints to gracefully evacuate nodes for maintenance by tainting them with "NoExecute" effect and add tolerations to workload pods to allow them to drain safely. 
+w
+1. **Node Maintenance :** Use taints to gracefully evacuate nodes for maintenance by tainting them with "NoExecute" effect and add tolerations to workload pods to allow them to drain safely. 
