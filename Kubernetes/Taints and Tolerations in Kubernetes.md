@@ -58,6 +58,6 @@ tolerations:
 ```
 
 
-**Toleration Operations:**
+If there is a taint on a node , any pod that comes to it will not be scheduled on that node expect some specific pods.
 
-
+If you want to schedule a pod on that node , then you need to a toleration with the same value as added in taint. 
