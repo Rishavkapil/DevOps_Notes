@@ -112,3 +112,69 @@ kubelet   Error: configmap "configmap-3" not found
 
 
 ### CreateContainerError (incorrect image specification or runtime error) 
+
+
+
+
+| Causes                                                                                                             | Resolution                                                           |
+| ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| Incorrect Image specification- both image and pod specification do not have a valid command to start the container | Add a valid command to start the container                           |
+| Runtime Error : Container experienced an error while starting                                                      | Identify the error and modify the image specification to resolve it. |
+| Insufficient Resources - Container Runtime did not clean the previous containers.                                  | Retrieve kubelet logs and resolve or reinstall the node.             |
+
+
+### Diagnosis and Resolution
+
+Follow these steps to diagnose the cause of the `CreateContainerError` and resolve it.
+
+
+**Step 1 : Gather Information**
+
+Run `kubectl describe pod <name>` and save the content to a text file for future reference. 
+
+
+```
+kubectl describe pod [name] /tmp/troubleshooting_describe_pod.txt
+```
+
+**Step 2 : Examine Pod Events output**
+
+Check the event section of the describe pod text file, and look for one of the following messages : 
+
+
+- `no command specified `
+- `starting container process caused`
+- `container name[. . . ] is already in use by container`
+- `is waiting to start`
+
+**Step 3 : Troubleshoot**
+
+If the error is `no command specified`: 
+
+- This means that both image configuration and pod configuration did not specify which command to run the container. 
+- Edit the image and pod configuration and add a valid command to start the container. 
+
+
+If the Error is `starting container process caused` : 
+
+- Look at the words following the container process caused message - this shows the error that occurred on the container when it was started. 
+- Identify the error and modify the image or the container start command to resolve it. 
+
+For example, if the error on the container was executable not found, identify where that executable file is called in the image specification, and ensure that file exists in the image and  is called using the correct path and name
+
+If the Error is `container name[. . . ] is already in use by container` : 
+
+- This means the container runtime did not clean up an older container under the same name. 
+- Sign in with the root access on the node and open the kubelet log - usually located at `/var/log/kubelet.log .`
+
+- Identify the issue in the kubelet log and resolve it - often this will involve reinstalling the container runtime or the kubelet, and re-registering the node with the cluster. 
+
+
+
+If the `Error is waiting to start` 
+
+- This means that an object mounted by the container is missing. Assuming you already checked for a  missing ConfigMap or Secret, there could be a storage volume or object required by the container. 
+
+- Review the pod manifest and check all the objects mounted by the pod or the container, and verify that they are available in the same namespace. If not, create them, or change the manifest to point to an available object. 
+
+
