@@ -1,62 +1,69 @@
+Kubernetes cronjobs are used for scheduling repetitive tasks such as taking backups, or monitoring , data syncing 
+
+### Types 
+
+1. **Basic Cronjobs :** Simple cronjob-based scheduling of recurring tasks. 
+
+2. **Concurrency Policy :** Specify how to handle concurrent executions of a CronJob
+
+3. **Job History Limits:** Control the number of successful and failed job completions retained by a CronJob. 
 
 
-Cronjob start one-time jobs on repeating schedules. 
+### Examples of each type 
 
-A CronJob is meant for performing regular scheduled actions such as backups, report generation and so on. One cronjob object is like one line of a crontab. 
 
-It runs a job periodically on given schedule. 
+###### Basic CronJobs : 
 
-A Single cronjob can create multiple concurrent jobs. 
-
-Example : 
 
 ```
 apiVersion: batch/v1
 kind: CronJob
-metadata:
-  name: hello
+metadata: 
+  name: basic-cronjob
 spec:
-  schedule: "* * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: hello
-            image: busybox:1.28
-            imagePullPolicy: IfNotPresent
-            command:
-            - /bin/sh
-            - -c 
-            - date; echo Hello from kubernetes cluster
-          restartPolicy: OnFailure
+          - name: basic-container
+            image: busybox
+            command: ["echo","Hello from basic CronJob"]
+          restartPolicy: Never
 ```
 
 
+###### Concurrency Policy 
 
-Now lets see what the everything do in this yaml file
+```
+apiVersion: batch/v1
+kind: CronJob
+metadata: 
+  name: concurrency-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  concurrencyPolic: Forbid     # Do not allow concurrent executions
+  # Allowed values are 
+  # Allow (default)
+  # Forbid
+  # Replace
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: concurrency-container
+            image: busybox
+            command: ["echo","Hello from the concurrency CronJob"]
+          restartPolicy: Never
+```
 
 
+Allowed values for concurrency Policy : 
 
-**Job Template :**
+* Allow : The cronJob allows concurrently running jobs
 
-The spec.jobTemplate defines a template for the jobs that the cronjob creates, and it is required. It has exactly the same schema as a job, except that it is nested and does not have an apiVersion or kind . 
+* Forbid : The cronjob does not allow concurrent runs; if it is time for a new job run and the previous job hasn't completed yet , the cronjob skips the new job. 
 
-**Deadline for a delayed job start :** 
-
-The .spec.DeadlineSeconds field is optioinal . This field defines a deadline  for staring the jobs. If that job misses its scheduled time for any reasons. 
-After missing a  deadline , the cronjob skips that instance of the job. For example, if you have a backup job that runs twice a day, you might allow it to start up to 8 hours late, because a backup taken any later wouldn't be useful: you would instead prefer to wait for next scheduled run. 
-
-**Concurrency Policy :** 
-
-The .spec.concurrencyPolicy field is optional . It specifies how to treat concurrent exceptions of a job that is created by this cronjob. This spec me specify only one of the following concurrency policies : 
-
-* `allow` : The cronjobs allow concurrently running jobs. 
-* `Forbid` : The cronjob does not allow concurrent runs; if it is time for new job run and the previous job run hasn't finished yet, the cronjob skips the new job run 
-
-
-**Scheduled Suspension** 
-
-You can suspend execution of jobs for a cronjob, by setting the optional `.spec.suspend` field to true. The field default to false. 
-
-This setting does not affect jobs that the cronjob has already started. 
+* Replace: If it is time for a new job run and the previous hasn't completed yet , then the cronjob replaces the currently running job with the new job run .
