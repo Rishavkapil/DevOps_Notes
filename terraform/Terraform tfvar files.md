@@ -11,18 +11,19 @@ Terraform automatically loads a number of variable definitions files if they are
 For Example : 
 
 Create file with tf extension
+```
 
-		variable age {
-		    type = number
-		}
+variable age {
+type = number
+}
+variable "username" 
+type = string
+}
 		
-		variable "username" {
-		  type = string
-		}
-		
-		output printname {
-		        value = "Hello, ${var.username}, your age is ${var.age}"
-		}
+output printname {
+value = "Hello, ${var.username}, your age is ${var.age}"
+}
+```
 
 
 Create a file terraform.tfvars
