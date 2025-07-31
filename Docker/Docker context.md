@@ -2,6 +2,8 @@
 
 Context are way to define the docker daemon you're interacting with. 
 
+Each context contains all the information required to manage resources on the daemon. The `docker context` command makes it easy to configure these contexts and switch between them. 
+
 syntax : 
 
 		docker context create <context_name>
