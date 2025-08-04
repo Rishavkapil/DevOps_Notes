@@ -86,3 +86,4 @@ A Groovy-based Domain specific language (DSL) is a programming language designed
 | Allows more code reuse and modularity                             | more self-contained and less reliant on external scripts.        |
 
 
+Scripted pipeline gives more control 
