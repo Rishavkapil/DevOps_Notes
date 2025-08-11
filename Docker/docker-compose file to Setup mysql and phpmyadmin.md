@@ -41,6 +41,6 @@ networks:
     
     
     
-    docker network create mynetwork 
-run this before apply dockercompsoe
+    // docker network create mynetwork 
+    // run this before apply dockercompsoe
 ```
