@@ -67,3 +67,66 @@ There are 3 commands to check for kernel routing information.
 ### What is default gateway in linux
 
 The default gateway in linux is the IP address of a router that your system uses to send traffic to destinations outside its local subnet 
+
+
+
+### How to Check which services are currently running in Linux system.
+
+```
+sudo systemctl list-units --type=service --state=running
+```
+
+### How to set a password that require users to change password every 30 days 
+
+
+option 1 : Set password policy for specific user 
+
+```
+sudo chage -M 30 username
+```
+
+option 2 : Set Default password policy for all new users 
+
+```
+sudo vim /etc/login.defs
+
+and add the below lines if not already present
+
+PASS_MAX_DAYS 30
+PASS_MIN_DAYS 0
+PASS_WARN_AGE 7
+```
+
+
+### How to create new user and give sudo previlages to it
+
+```
+sudo adduser
+sudo usermod -aG sudo username
+```
+
+
+### How to create user with only specific permission like should only run basic commands and docker
+
+
+Step 1 : Create a new user , you can create it using sudo adduser <user_name>
+
+
+Step 2 : Create a private bin directory for allowed commands. 
+
+```
+sudo mkdir /home/devuser/bin
+```
+- Instead of copying binaries, we made **symlinks** to the real commands:
+    
+```
+sudo ln -s /bin/ls /home/devuser/bin/ls sudo ln -s /bin/cat /home/devuser/bin/cat sudo ln -s /usr/bin/docker /home/devuser/bin/docker # (and so on for mkdir, rm, cp, mv)
+```
+
+Step 4 : Restricted Path
+
+```
+echo 'export PATH=$HOME/bin' 
+
+```
+
