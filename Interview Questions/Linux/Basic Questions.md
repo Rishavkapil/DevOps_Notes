@@ -130,3 +130,14 @@ echo 'export PATH=$HOME/bin'
 
 ```
 
+
+
+
+## How to block particular service on VPN
+
+e.g
+```
+iptables -A FORWARD -i tun0 -p tcp --dport 80 -j REJECT
+
+```
+

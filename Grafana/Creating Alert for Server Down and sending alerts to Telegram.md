@@ -2,8 +2,7 @@
 1. You need to create a telegram channel and then you need to create a bot for that
 2. From there you need to copy Bot_token and chat id
 3. to get chat id to need to hit : 
-			https://https://api.telegram.org/bot<bot_token>/getupdates
-
+			https://api.telegram.org/bot{dein_bot_api_token}/getUpdates
 4. Then you need to create a alertrules for the server
 5. for that create a new file in /etc/promethes and it will be alert.rules.yml
 6. then add the following content to that file : 
