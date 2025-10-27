@@ -1,0 +1,53 @@
+
+INTERVIEW QUESTIONS. 
+
+
+--------------------------------------------------------------------------------------------
+
+What are NACLs in AWS and how does they differ from subnets. ??
+
+NACLs are stateless, you need to specify the inbound and outbound rules.
+
+--------------------------------------------------------------------------------------------
+
+
+What are different types of Volumes in EBS and what are they used for ?
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+What is the differene between server side encryption and client side encryption. 
+
+
+--------------------------------------------------------------------------------------------
+
+
+Why do you need autoscaling and what are the different types of autoscalling ?
+
+
+--------------------------------------------------------------------------------------------
+
+
+What is connection draining ??
+
+
+Means connection is going to die. and if there are any pending requests it will first finish those then it will die. 
+
+
+--------------------------------------------------------------------------------------------
+
+
+What is image pull policy in kubernetes ?
+
+
+--------------------------------------------------------------------------------------------
+
+
+What is the difference between deployments and daemonsets in kubernetes ?
+
+
+--------------------------------------------------------------------------------------------
+
+
