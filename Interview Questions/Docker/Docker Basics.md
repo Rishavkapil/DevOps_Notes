@@ -151,3 +151,29 @@ Avoid USER root
 `docker stats ` command is used to monitor the resource usage of running Docker Containers in real-time. 
 
 
+
+
+## You are trying to update the build but it is picking cache, how will you resolve that 
+
+
+```
+docker system prune -af
+
+docker-compose build --no-cache
+
+docker-compose up -d
+```
+
+
+
+## How to copy a file from one container to other container.
+
+with the help of `docker cp` command.
+
+suppose i've a file in container 1 at the location `/var/test/file1`  and  i want to copy it to other container eg. container 2 at the location /var/demo/file1 , how can i do that
+
+```
+docker cp <container1_id>:/var/test/file1 <container2_id>:/var/demo/file1
+```
+
+

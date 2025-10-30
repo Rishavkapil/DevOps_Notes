@@ -141,3 +141,13 @@ iptables -A FORWARD -i tun0 -p tcp --dport 80 -j REJECT
 
 ```
 
+
+
+## How to create a file and print something inside that file
+
+```
+cat > Hello.txt
+Hi , kaise ho 
+then press ctrl+d
+```
+
