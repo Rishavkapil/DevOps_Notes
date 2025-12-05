@@ -34,6 +34,7 @@ Volumes are mounted at specified paths within the container file system. For eac
 
 Below is the simple non persistent pod creating file with attached volume, but that volume is non-persistent or its  lifetime is limited to Pod's lifetime, if the pod is crashed or deleted , the volume and data will also be vanished. However, Container's lifecycle will not affect the volume, but pod's lifecycle will. 
 
+```
 
 apiVersion: v1
 kind: Pod
@@ -54,12 +55,15 @@ spec:
     emptyDir: {}          	# this is for non-persistent volumes
     
     
-    
-===============================================================================================
+```
+
+
+------------------------------------------------------------
+
   
 Persistent Volumes (PV) : 
 
-Persistent volumes are storage resources provisined in a kubernetes cluster. managed by cluster administrator. They provide an abstraction layer over physical storage devices, allowing users to access storage without needing to know the underlying infrastructure details. 
+Persistent volumes are storage resources provisioned in a kubernetes cluster. managed by cluster administrator. They provide an abstraction layer over physical storage devices, allowing users to access storage without needing to know the underlying infrastructure details. 
 
 Available options : 
 
@@ -71,7 +75,7 @@ Available options :
 3. ReadWriteMany : Can be mounted as read-write by multiple nodes. 
 
 
-* StorageClassName : Associates the PV wiht the specific storage class. 
+* StorageClassName : Associates the PV with the specific storage class. 
 
 * Volume Mode : Determines whether the volume is mounted as a file system or block device. 
 
