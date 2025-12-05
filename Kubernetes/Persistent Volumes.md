@@ -1,4 +1,4 @@
-	In kubernetes , a persistent volume(PV) is the piece of storage in the cluster that has been provisioned by an administrator using Storage classes. 
+In kubernetes , a persistent volume(PV) is the piece of storage in the cluster that has been provisioned by an administrator using Storage classes. 
 
 ![[Pasted image 20250410152542.png]]
 

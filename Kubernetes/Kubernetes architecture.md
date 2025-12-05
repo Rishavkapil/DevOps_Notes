@@ -1,6 +1,6 @@
 
 
-	**There are tow types of mnodes on which kubernetes operates on :** 
+**There are tow types of mnodes on which kubernetes operates on :** 
 
 1. **Master Node** 
 2. **Worker Node**
@@ -91,7 +91,7 @@ Responsible for pulling Container images , starting container and managing conta
 
 The kubelet requests the Container runtime to pull the required Container image from registry (such as DockerHub, AWS ECR  or a private registry ).
 
-## Step 3 : Creating and Running the Pods
+## Step 3 : Creating and Running the Container
 
 The container runtime starts the container inside the pod 
 
@@ -127,7 +127,7 @@ The kubernetes API server receives the request and stores pods definition in ETC
 
 ## Step 3 : Scheduler assigns a node
 
-				The kubernetes qscheduler picks a suitable worker node based on : 
+The kubernetes scheduler picks a suitable worker node based on : 
 *  Resources availability 
 * Node selectors and **affinity rules** (defines on which node should pod run)
 * **Taints and toleration** (taints prevents pods running on a node unless they have a matching toleration )
@@ -196,7 +196,7 @@ Uses Scheduling Constraints like :
 - **Pod Affinity** (run close to or away from other pods)
 - **Taints and Tolerations** (Restricts pod to a specific nodes). 
 
-  ### Controller Manager(kube-controller-manager)
+### Controller Manager(kube-controller-manager)
 
 
 ==Runs multiple container processes to manage the cluster state .== 

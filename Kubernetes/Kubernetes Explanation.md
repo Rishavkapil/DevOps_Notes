@@ -1,4 +1,4 @@
-
+	
 Kubernetes is a container orchestration tool 
 
 Why it is needed when we already have docker ?
@@ -12,6 +12,9 @@ Now the problem with this is that we can't create replicas with this pod.yml fil
 
 So we need do define ==deployment== file , which create replica sets and then replica set creates pods . 
 
+Now **when we have replicaSet , then why there was a need for deployment?**
+
+Because deployment is an advanced version of replicaSets, In replicaSets we can't roll back to previous versions, whereas in deployment we can rollback to previous versions as well .This was the main reason. 
 
 **why do we need services** 
 

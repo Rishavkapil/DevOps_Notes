@@ -6,7 +6,7 @@
 - Think of it like a menu of a restaurant - it defines what actions are available 
 - Examples of kubernets API resources : 
 	- /api/v1/pods
-	- /apis/apps/v1/deployments
+	- /api/apps/v1/deployments
 	- /api/v1/node
 # What are Service Accounts ?
 

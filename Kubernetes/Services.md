@@ -1,16 +1,11 @@
 
-
 In kubernetes , services are an abstraction that define a stable way to access group of pods. 
-
-
 
 ##### What service does 
 
 Select pods  using labels 
 Exposes those pods to other parts of your cluster 
 provides a stable DNS name or IP address for those pods. 
-
-
 
 ## Types of services in Kubernetes 
 
