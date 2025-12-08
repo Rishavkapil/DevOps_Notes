@@ -220,3 +220,72 @@ docker import container.tar newimage:latest
 Docker contexts allows you to switch between different docker environments without needing to change your docker CLI commands.  
 
 
+
+## What does docker info command do ?
+
+This command gets detailed information about Docker installed on the Host system. 
+
+The information can be like what are the number of containers or images, and in what state they are running, hardware specifications like total memory allocated, speed of the processor etc. 
+
+
+## What is the purpose of up, start, run commands in docker compose ?
+
+* **Docker compose up :** 
+	* Creates + Start Containers
+* **Docker-Compose run :** 
+	* Runs one-off container only ,
+	* You need this when you want to run a command inside the service.
+* **Docker compose start :** 
+	* starts existing stopped containers only.
+	* if the container does not exist it fails
+
+## Can you differentiate between daemon logging and container logging ?
+
+* **Daemon Logging :** Logs and event s of docker engine itself. 
+	* Examples: 
+		* Docker daemon startup/shutdown
+		* image pulls
+		* container creation/failures
+	* Basically : If Docker engine does something , it shows up here. 
+* **Container Logging:** Logs of a running container. 
+	* Example:
+		* Application logs (console.log, print etc)
+		* App error inside containers
+
+
+### Can we use JSON instead of YAML while developing docker-compose file in Docker?
+
+Yes! It can be used. In order to run docker-compose with JSON, `docker-compose -f docker-compose.json up` can be used.
+
+
+
+### How will you ensure that container 1 runs before container 2 while using Docker Compose?
+
+
+To achieve this , we can make use of `depends on` 
+
+eg. 
+
+```
+version: 2.4
+services:
+  backend:
+    build: .
+    depends_on:
+     - db
+db:
+ image: postgres
+```
+
+
+
+## What will restart : always do in a docker compose file ?
+
+This will restart the container on every startup, 
+
+When you restart the `docker.service` , that container will also get restarted, 
+
+**NOTE: It will not restart if you manually stop the container. like `docker stop <container_id>`**
+
+
+
