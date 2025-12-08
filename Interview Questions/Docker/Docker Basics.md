@@ -177,3 +177,46 @@ docker cp <container1_id>:/var/test/file1 <container2_id>:/var/demo/file1
 ```
 
 
+
+
+## Docker save 
+
+creates a tar archive of an image .
+
+```
+docker save -o ubuntu.tar ubuntu:latest
+```
+
+## Docker load
+
+Loads an image created by docker save back into Docker. 
+
+```
+docker load -i ubuntu.tar
+```
+
+## Docker export 
+
+Exports container filesystem only into a tarball. 
+
+
+```
+docker export my-container > container.tar
+```
+
+
+## Docker import 
+
+Converts a filesystem tar (from docker export ) into a new image. 
+
+```
+docker import container.tar newimage:latest
+```
+
+
+
+## Docker Contexts
+
+Docker contexts allows you to switch between different docker environments without needing to change your docker CLI commands.  
+
+
