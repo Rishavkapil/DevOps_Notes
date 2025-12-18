@@ -21,7 +21,6 @@ Normally , when a pod is deleted or recreated, any data stored in its container 
 	* A request for storage by user. 
 	* Specifies the size , access mode etc. 
 	* kubernetes binds PVC to a suitable PV. 
-	* 
 3. **Storage Class :** 
 	* Describes different stages of storage. 
 

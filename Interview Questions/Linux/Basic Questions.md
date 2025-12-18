@@ -143,11 +143,31 @@ iptables -A FORWARD -i tun0 -p tcp --dport 80 -j REJECT
 
 
 
-## How to create a file and print something inside that file
+## How to create a file using cat  and print something inside that file
 
 ```
 cat > Hello.txt
 Hi , kaise ho 
 then press ctrl+d
 ```
+
+
+
+### What is difference between /var , /opt , /usr
+
+
+* /var : Logs, runtime data.
+* /opt : optional third party, softwares
+* /usr : System binaries and libraries
+
+### Systemd vs init.d
+
+These both help in starting any application. 
+
+init.d is old and was used in older linux distributions
+
+systemd is new and is mostly used nowadays.
+
+
+
 
