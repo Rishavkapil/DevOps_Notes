@@ -12,3 +12,8 @@ Kafka is primarily used to build real-time streaming data pipelines and applicat
 
 
 
+==***Streams are just infinite data, data that never end. It just keep arriving, and you can process it in real-time.***==
+
+
+
+
