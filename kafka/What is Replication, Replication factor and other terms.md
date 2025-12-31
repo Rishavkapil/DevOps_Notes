@@ -63,4 +63,20 @@ A broker never stores only replicas.
 Each broker stores : 
 * Some Partitions as leaders
 * Some partitions as followers (replicas)
-* 
+
+
+
+```
+Broker-1:
+  orders-0 → Leader
+  orders-1 → Follower
+  payments-2 → Leader
+
+Broker-2:
+  orders-1 → Leader
+  orders-0 → Follower
+  shipping-0 → Leader
+
+```
+
+
