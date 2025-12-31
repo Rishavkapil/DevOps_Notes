@@ -52,3 +52,15 @@ When producer sends an order:
 * and **Consumers will read data only from leaders.** 
 
 
+
+
+
+## So who is the leader like broker or partition ??
+
+
+A broker never stores only replicas. 
+
+Each broker stores : 
+* Some Partitions as leaders
+* Some partitions as followers (replicas)
+* 
