@@ -38,3 +38,6 @@ Each record in the partition is immutable .
 
 Each record in the partition has an offset , which basically means position of the particular record inside the partition. (offset = id/index)
 
+
+For more , Please refer to this blog post on medium : https://medium.com/swlh/apache-kafka-what-is-and-how-it-works-e176ab31fcd5
+
