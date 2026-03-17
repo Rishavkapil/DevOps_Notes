@@ -1,0 +1,1 @@
+- Managed Redis or memcached. 

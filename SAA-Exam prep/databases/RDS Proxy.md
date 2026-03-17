@@ -1,0 +1,4 @@
+- Fully managed Database proxy for RDS .
+- Allows apps to pool and share db connections established with the database. 
+- Improving database effeciency by reducing the stress on database resources(eg. CPU, RAM) & minimizing open connections
+- This sits between our application and **RDS or Aurora Databases** & manages connections for you. 

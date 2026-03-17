@@ -25,4 +25,3 @@ Even though this is setup , the site-to-site vpn will not work until you enable 
 IF you have a Virtual Private Gateway and have multiple customer-gateway 
 
 - Provides secure communication between  multiple sites, if you have multiple VPN connections 
-- 

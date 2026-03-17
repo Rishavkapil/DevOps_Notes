@@ -1,0 +1,3 @@
+- Create a new aurora DB cluster from an existing one. 
+- Faster than snapshot & restore
+- 

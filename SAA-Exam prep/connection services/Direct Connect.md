@@ -1,0 +1,1 @@
+A Dedicated physical cable from your data center to AWS.
