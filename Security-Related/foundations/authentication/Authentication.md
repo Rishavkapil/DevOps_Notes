@@ -6,5 +6,4 @@ It confirms that the entity who is or what it claims to be , typically by requir
 
 Mechanism to authenticate access to resources over HTTP credentials are sent in the request headers. 
 
-## Session Based authentication
 
