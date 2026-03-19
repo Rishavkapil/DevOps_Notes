@@ -1,0 +1,2 @@
+- A fully-managed service for file transfers into & out of amazon S3 or amazon EFS using FTP protocol. 
+- Supported Protocols: FTP, FTPS, SFTP
