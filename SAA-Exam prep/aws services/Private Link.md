@@ -1,0 +1,1 @@
+Private Link gives direct access to the AWS Services to VPC. 
