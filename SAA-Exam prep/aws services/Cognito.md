@@ -1,1 +1,2 @@
 - Used for user authentication & user management. 
+- Gives user an identity to interact with our web or mobile application
