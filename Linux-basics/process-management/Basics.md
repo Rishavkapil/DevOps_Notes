@@ -14,4 +14,33 @@ The first process that starts is PID 1
 - This process is either daddy or granddaddy of every other process that is running on the system
 - So yes, Processes can spawn other processes. 
 
+when we run normal ps command , it provides a quick snapshot of the processes associated with your current terminal session. 
+
+
+	 macbookpro@Macbooks-MacBook-Pro ~ % ps
+
+	  PID TTY           TIME CMD
+
+	68421 ttys000    0:00.07 -zsh
+
+	macbookpro@Macbooks-MacBook-Pro ~ %
+
+PID : The unique process ID
+TTY: Controlling the terminal for the process.
+STAT: The current status of the process
+TIME: The total CPU time the process has used
+CMD: The command that started the process
+
+## ps with options
+#### ps aux
+Here's what these options mean:
+
+a : displays all the process for all users.
+u: provides a detailed user-oriented format.
+x: includes processes not attached to any terminal. These often include system daemons that start at boot and show ? in TTY
+
+
+
+
+
 
