@@ -40,7 +40,21 @@ u: provides a detailed user-oriented format.
 x: includes processes not attached to any terminal. These often include system daemons that start at boot and show ? in TTY
 
 
+#### px -ef
+
+This is very popular way of getting full picture of everything running on your system.
+
+this provides full listing of all processes.
+
+-e : selects every process on the system. 
+-f : displays a "full format" listing, which includes tails like PID, UID , C(CPU utilization ) and STIME (Start time)
 
 
+Many prefer ps -ef over ps aux for its clear , heirarchical view and detailed information. When troubleshooting on a linux system , running ps -ef is often one of the first steps to diagnose issues. 
+
+
+### Real time monitoring with top
+
+while ps gives you a snapshot , the top command provides real time dynamic view of the processes on your system. It is an excellent tool for identifying which processes are consuming the most CPU or memory. By default, top display refreshes every few seconds. 
 
 
