@@ -1,0 +1,1 @@
+When you inspect a running process , you'll notice a TTY field in the ps command's output. This field is important as it indicates the controlling terminal that executed the command. 
