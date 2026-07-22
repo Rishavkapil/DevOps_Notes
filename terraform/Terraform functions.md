@@ -1,4 +1,4 @@
-
+	
 The terraform language include number of built in functions that you can call from within expressions to transform and combine values . The general syntax for function calls is a function name followed by comma-seperated arguments in the parenthesis. 
 
 eg. 

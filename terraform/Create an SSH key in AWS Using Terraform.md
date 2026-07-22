@@ -10,19 +10,8 @@ Lets create an ssh keypair on our local system using the ssh-keygen command
 		Your identification has been saved in ./id_rsa
 		Your public key has been saved in ./id_rsa.pub
 		The key fingerprint is:
-		SHA256:8CdVo44oVuPiN4AdAKt2sLTiYWpTqCzyF1s5YBcOvWo gaurav@learning-ocean
-		The key's randomart image is:
-		+---[RSA 3072]----+
-		|...  .      o    |
-		| . .. o    o .   |
-		|.o  .o+o  o      |
-		|o =oo++= +       |
-		|oB.+*+o.S o      |
-		|O +oE++  o       |
-		|== ..+o.         |
-		|+.. o. .         |
-		|  ..             |
-		+----[SHA256]-----+
+
+		
 
 
 

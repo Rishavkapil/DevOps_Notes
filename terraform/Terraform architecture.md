@@ -6,7 +6,7 @@ The main components of the terraform includes **Core** and **Plugins**
 
 Terraform core manages the life cycle of infrastructure, evaluating the current state against the desired configuration and proposing a plan for adding or removing infrastructure components. 
 
-
+ 
 ![[Pasted image 20250430152645.png]]
 
 

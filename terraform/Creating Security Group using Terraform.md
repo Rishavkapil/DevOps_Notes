@@ -50,3 +50,6 @@ now let's modify the instance.tf file, with the below content.
 		  }
 
 
+When we want to allow all protocols, then we just add 'protocol = -1 '
+
+-1 means " Allow all protocols"

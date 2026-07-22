@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ddfa0859e1399f6e",
+        "id": "7dc1947d8e2214a9",
         "type": "tabs",
         "children": [
           {
-            "id": "d267c3863fac9d6e",
+            "id": "0a0f70acd9d4bd5a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux-basics/process-management/Controlling Terminal.md",
+                "file": "terraform/Creating Security Group using Terraform.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controlling Terminal"
+              "title": "Creating Security Group using Terraform"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "components of terraform",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -180,10 +180,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "d267c3863fac9d6e",
+  "active": "0a0f70acd9d4bd5a",
   "lastOpenFiles": [
-    "Linux-basics/process-management/Chaining.md",
+    "terraform/Create an SSH key in AWS Using Terraform.md",
+    "terraform/Creating first terraform file.md",
+    "terraform/Creating AWS EC2 instance using Terraform.md",
+    "terraform/Data Sources.md",
+    "terraform/Terraform architecture.md",
+    "terraform/Terraform list variable.md",
+    "terraform/Terraform destroy.md",
+    "terraform/Terraform functions.md",
+    "terraform/Declarative Vs Imperative.md",
+    "AWSCLIV2.pkg",
+    "terraform/What is terraform.md",
     "Linux-basics/process-management/Controlling Terminal.md",
+    "Linux-basics/process-management/Chaining.md",
     "Linux-basics/process-management/Basics.md",
     "Linux-basics/process-management"
   ]
